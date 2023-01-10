@@ -1,13 +1,20 @@
 import React from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
+import { entryModal } from './entryModal';
+import { uiNewEntryModal } from '../../actions/ui';
 
 export const Sidebar = () => {
 
     const dispatch = useDispatch();
     const handleLogOut = () => {
         dispatch( startLogout() );
+    }
+
+    const handleNewEntry = () => {
+        // dispatch( uiNewEntryModal() );
+        entryModal('What is your new entry?');
     }
     return (
         <div>
@@ -22,7 +29,7 @@ export const Sidebar = () => {
                         Logout
                     </button>
                 </div>
-                <div className="journal__new-entry">
+                <div className="journal__new-entry" onClick={ handleNewEntry }>
                     <i className="far fa-calendar-plus fa-5x"></i>
                         <p className="mt-1">
                             New entry

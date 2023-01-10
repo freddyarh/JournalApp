@@ -16,7 +16,7 @@ export const JournalEntry = () => {
                     Un nuevo dia
                 </p>
                 <p className="journal__entry-content">
-                    asdsd asdasdsd sdddddddddddddddds dddddddddd dddddddddddd.
+                    Here we are to write our experiences and something else
                 </p>
             </div>
             
