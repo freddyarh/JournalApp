@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -11,8 +11,8 @@ export const LoginScreen = () => {
   const { loading } = useSelector( state => state.ui);
 
   const [formValue, handleInputChange] = useForm({
-    email: "nando@gmail.com",
-    password: "1324",
+    email: "fredy@gmail.com",
+    password: "123456",
   });
 
   const { email, password } = formValue;

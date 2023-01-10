@@ -16,3 +16,11 @@ export const uiStartLoading = () => ({
 export const uiFinishLoading = () => ({
     type: types.uiFinishLoading
 });
+
+export const uiNewEntryModal = () => ({
+    type: types.uiNewEntryModal
+});
+
+export const uiFinishEntryModal = () => ({
+    type: types.uiFinishEntryModal
+});

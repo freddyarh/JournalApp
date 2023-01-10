@@ -31,6 +31,17 @@ export const uiReducer = ( state = initialState, action ) => {
                 ...state,
                 loading: false
             }
+        case types.uiNewEntryModal:
+            return {
+                ...state,
+                loading: true
+            }
+        
+        case types.uiFinishEntryModal:
+            return {
+                ...state,
+                loading: false
+            }
     
         default:
             return state;
