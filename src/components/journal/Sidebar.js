@@ -2,7 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
-import { entryModal } from './entryModal';
+import { EntryModal } from './EntryModal';
+import { setEntry } from "../../actions/entry";
 import { uiNewEntryModal } from '../../actions/ui';
 
 export const Sidebar = () => {
@@ -12,9 +13,20 @@ export const Sidebar = () => {
         dispatch( startLogout() );
     }
 
-    const handleNewEntry = () => {
+    const handleNewEntry = async() => {
         // dispatch( uiNewEntryModal() );
-        entryModal('What is your new entry?');
+        const text = await EntryModal();
+        console.log(text?.value)
+        if(text?.value !== undefined){
+            const newEntry = {
+              id: new Date().getTime(),
+              description: text.value,
+              done: false
+            }
+    
+            dispatch(setEntry(newEntry));
+        }
+
     }
     return (
         <div>
