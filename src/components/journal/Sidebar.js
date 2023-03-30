@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { uiNewEntryModal } from '../../actions/ui';
 import { useDispatch, useSelector } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
 import { EntryModal } from './EntryModal';
 import { setEntry } from "../../actions/entry";
-import { uiNewEntryModal } from '../../actions/ui';
 
 export const Sidebar = () => {
 
@@ -14,7 +14,7 @@ export const Sidebar = () => {
     }
 
     const handleNewEntry = async() => {
-        // dispatch( uiNewEntryModal() );
+        
         const text = await EntryModal();
         console.log(text?.value)
         if(text?.value !== undefined){
