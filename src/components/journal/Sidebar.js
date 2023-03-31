@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { uiNewEntryModal } from '../../actions/ui';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react'
+import { useDispatch } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
 import { EntryModal } from './EntryModal';

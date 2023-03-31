@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const JournalEntries = ({ entries }) => {
 
-    const [entryData, setEntryData] = useState();
+    const [entryData, setEntryData] = useState(null);
 
     useEffect(() => {
         loadEntriesData();
@@ -12,10 +12,9 @@ export const JournalEntries = ({ entries }) => {
 
     const loadEntriesData = async() => {
         return await axios.get('http://localhost:3000/products')
-            .then(function ({ data }) {
+            .then(function (res) {
             // handle success
-            setEntryData(data.product);
-            console.log(data)
+            setEntryData(res.data);
             
         })
         .catch(function (error) {
@@ -23,16 +22,15 @@ export const JournalEntries = ({ entries }) => {
             console.log(error);
         })
     }
-    console.log(entryData)
-
-    const numberTimes = [1,2,3];
+    
+    if(!entryData) return null;
     
     return (
         <div className="journal__entries">
            
            {
-               numberTimes.map( (value, index) => (
-                    <JournalEntry key={ value } />
+               entryData.product.map( (value, index) => (
+                    <JournalEntry key={ index } value={ value }/>
                ))
            }
 
