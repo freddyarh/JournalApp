@@ -1,5 +1,8 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import PropTypes from 'prop-types';
+import axios from "axios";
+import moment from 'moment';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -7,7 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -46,8 +49,34 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
+const baseURL = "http://localhost:3000/entries";
+
 export default function CustomizedDialogs() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [post, setPost] = useState(null);
+  const [inputs, setInputs] = useState({
+    title: "",
+    description: "",
+    date: new Date(),
+    user: useSelector( state => state.auth.uid)
+  });
+  
+  const handleSaveEntries = () => {
+    axios
+      .post(baseURL, inputs)
+      .then((response) => {
+        setPost(response.data);
+        console.log(response)
+      });
+    handleClose();
+  }
+
+  const handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+
+    setInputs(values => ({ ...values, [name]: value }));
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -67,32 +96,37 @@ export default function CustomizedDialogs() {
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
-        open={open}
+        open={open} 
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          <input placeholder='ingrese titulo' type="text" />
-        </BootstrapDialogTitle>
-        <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
-            magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
-            ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+        <DialogContent>
+        <DialogContent>
+          <TextField
+              margin="none"
+              id="title"
+              name="title"
+              label="Title"
+              type="text"
+              fullWidth
+              variant="standard"
+              onChange={ handleInputChange }
+            />
+        </DialogContent>
+          <TextField
+            id="outlined-multiline-static"
+            name="description"
+            fullWidth
+            label="How was your day?"
+            multiline
+            rows={4}
+            placeholder="Add some text"
+            onChange={ handleInputChange }
+          />
         </DialogContent>
         <DialogContent dividers>
           <input type="file"/>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
+          <Button autoFocus onClick={handleSaveEntries}>
             Save changes
           </Button>
         </DialogActions>
