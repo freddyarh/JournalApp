@@ -1,5 +1,6 @@
-import React from 'react'
-import { NotesAppBar } from './NotesAppBar'
+import React from 'react';
+import CustomizedDialogs from '../modal/ModalDialog';
+import { NotesAppBar } from './NotesAppBar';
 
 export const NoteScreen = () => {
     return (

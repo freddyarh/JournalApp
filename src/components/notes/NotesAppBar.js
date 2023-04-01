@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
 
 export const NotesAppBar = () => {
+
+    const date = moment().format('MMMM Do YYYY');
+
     return (
         <div className="notes__appbar">
-            <span>29 de Julios del 2021</span>            
+            <span>{ date }</span>            
 
             <div>
                 <button className="btn">

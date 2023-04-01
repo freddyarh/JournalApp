@@ -4,6 +4,7 @@ import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
 import { EntryModal } from './EntryModal';
 import { setEntry } from "../../actions/entry";
+import CustomizedDialogs from '../modal/ModalDialog';
 
 export const Sidebar = () => {
 
@@ -16,7 +17,7 @@ export const Sidebar = () => {
         
         const text = await EntryModal();
         console.log(text?.value)
-        if(text?.value !== undefined){
+        if(text.value !== undefined){
             const newEntry = {
               id: new Date().getTime(),
               description: text.value,
@@ -40,11 +41,14 @@ export const Sidebar = () => {
                         Logout
                     </button>
                 </div>
-                <div className="journal__new-entry" onClick={ handleNewEntry }>
+                {/* <div className="journal__new-entry" onClick={ handleNewEntry }>
                     <i className="far fa-calendar-plus fa-5x"></i>
                         <p className="mt-1">
                             New entry
                         </p>
+                </div> */}
+                <div className="journal__new-entry">
+                    <CustomizedDialogs />
                 </div>
                 <JournalEntries />
             </aside>

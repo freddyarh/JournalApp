@@ -11,7 +11,7 @@ export const JournalEntries = ({ entries }) => {
     }, [])
 
     const loadEntriesData = async() => {
-        return await axios.get('http://localhost:3000/products')
+        return await axios.get('http://localhost:3000/entries')
             .then(function (res) {
             // handle success
             setEntryData(res.data);
@@ -29,7 +29,7 @@ export const JournalEntries = ({ entries }) => {
         <div className="journal__entries">
            
            {
-               entryData.product.map( (value, index) => (
+               entryData.entries.map( (value, index) => (
                     <JournalEntry key={ index } value={ value }/>
                ))
            }

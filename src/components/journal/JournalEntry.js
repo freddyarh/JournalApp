@@ -17,7 +17,7 @@ export const JournalEntry = ({ value }) => {
                     { value.title }
                 </p>
                 <p className="journal__entry-content">
-                    { value.body }
+                    { value.description }
                 </p>
             </div>
             
