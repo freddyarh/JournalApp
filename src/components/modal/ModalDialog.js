@@ -25,7 +25,7 @@ function BootstrapDialogTitle(props) {
   const { children, onClose, ...other } = props;
 
   return (
-    <DialogTitle sx={{ m: 0, p: 2 }} {...other}>
+    <DialogTitle sx={{ mb: 3, p: 0 }} {...other}>
       {children}
       {onClose ? (
         <IconButton
@@ -99,7 +99,7 @@ export default function CustomizedDialogs() {
         open={open} 
       >
         <DialogContent>
-        <DialogContent>
+        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
           <TextField
               margin="none"
               id="title"
@@ -110,7 +110,7 @@ export default function CustomizedDialogs() {
               variant="standard"
               onChange={ handleInputChange }
             />
-        </DialogContent>
+        </BootstrapDialogTitle>
           <TextField
             id="outlined-multiline-static"
             name="description"
@@ -127,7 +127,7 @@ export default function CustomizedDialogs() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSaveEntries}>
-            Save changes
+            Save
           </Button>
         </DialogActions>
       </BootstrapDialog>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
 import { EntryModal } from './EntryModal';
@@ -9,6 +9,8 @@ import CustomizedDialogs from '../modal/ModalDialog';
 export const Sidebar = () => {
 
     const dispatch = useDispatch();
+    const userName = useSelector( state => state.auth.name);
+
     const handleLogOut = () => {
         dispatch( startLogout() );
     }
@@ -35,7 +37,7 @@ export const Sidebar = () => {
                 <div className="journal__sidebar-navbar">
                     <h3 className="mt-1">
                         <i className="far fa-moon"></i>
-                        <span> Fredy!!</span>
+                        <span> { userName }!!</span>
                     </h3>
                     <button className="btn" onClick={handleLogOut}>
                         Logout
