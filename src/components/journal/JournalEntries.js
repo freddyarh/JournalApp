@@ -29,7 +29,7 @@ export const JournalEntries = ({ entries }) => {
         <div className="journal__entries">
            
            {
-               entryData.entries.map( (value, index) => (
+               entryData.entries.reverse().map( (value, index) => (
                     <JournalEntry key={ index } value={ value }/>
                ))
            }

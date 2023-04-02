@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
 
 export const JournalEntry = ({ value }) => {
+
+    const { date } = value;
+    const day = moment(date).format('dddd');
+    const fullDate = moment(date).format('MMMM Do YYYY, h:mm:ss a');
 
     return (
         <div className="journal__entry pointer">
@@ -22,8 +27,8 @@ export const JournalEntry = ({ value }) => {
             </div>
             
             <div className="journal__entry-date-box">
-                <span>Monday</span>
-                <h4>28</h4>
+                <span>{ day }</span>
+                <h4>{ fullDate }</h4>
             </div>
             
         </div>
