@@ -58,6 +58,7 @@ export default function CustomizedDialogs() {
     title: "",
     description: "",
     date: new Date(),
+    image: "",
     user: useSelector( state => state.auth.uid)
   });
   
@@ -123,7 +124,11 @@ export default function CustomizedDialogs() {
           />
         </DialogContent>
         <DialogContent dividers>
-          <input type="file"/>
+          <input 
+            type="file"
+            name="image"
+            onChange={ handleInputChange }
+          />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSaveEntries}>

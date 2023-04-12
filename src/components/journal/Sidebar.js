@@ -37,7 +37,7 @@ export const Sidebar = () => {
                 <div className="journal__sidebar-navbar">
                     <h3 className="mt-1">
                         <i className="far fa-moon"></i>
-                        <span> { userName }!!</span>
+                        <span> Welcome { userName }!!</span>
                     </h3>
                     <button className="btn" onClick={handleLogOut}>
                         Logout
