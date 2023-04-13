@@ -63,20 +63,19 @@
 }
 
 .journal__entry-title {
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .journal__entry-content {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .journal__entry-date-box {
-    align-items: right;
     display: flex;
     flex-direction: column;
-    justify-content: right;
     padding: 5px;
+    font-size: 12px;
 }
 
 .journal__entry-date-box span {
