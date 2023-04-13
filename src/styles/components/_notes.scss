@@ -5,6 +5,13 @@
     height: 100%;
 }
 
+.notes__body-content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 20px;
+}
+
 .notes__appbar {
     align-items: center;
     background-color: $primary;
@@ -14,9 +21,14 @@
     padding: 10px 20px 10px 20px;
 }
 
+.notes__graphic {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+}
+
 .notes__content {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
     height: 100%;
     padding: 20px;
 }
@@ -40,10 +52,10 @@
     border: none;
     color: $dark-grey;
     font-size: 20px;
-    flex: 1 1 auto;
+    height: 74%;
     resize: none;
 }
 
 .notes__image {
-    box-shadow: 5px 5px $dark-grey;
+    align-self: self-end;
 }

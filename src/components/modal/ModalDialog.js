@@ -49,7 +49,7 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-const baseURL = "http://localhost:3000/entries";
+const baseURL = "http://localhost:3000/journal/entries";
 
 export default function CustomizedDialogs() {
   const [open, setOpen] = useState(false);
@@ -127,6 +127,7 @@ export default function CustomizedDialogs() {
           <input 
             type="file"
             name="image"
+            id="image"
             onChange={ handleInputChange }
           />
         </DialogContent>
