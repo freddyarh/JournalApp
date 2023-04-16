@@ -54,23 +54,39 @@ const baseURL = "http://localhost:3000/journal/entries";
 export default function CustomizedDialogs() {
   const [open, setOpen] = useState(false);
   const [post, setPost] = useState(null);
+  
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
     date: new Date(),
-    image: "",
+    image: {},
     user: useSelector( state => state.auth.uid)
   });
   
   const handleSaveEntries = () => {
+    const data = new FormData();
+    data.append("title", inputs.title);
+    data.append("description", inputs.description);
+    data.append("date", inputs.date);
+    data.append("image", inputs.image);
+    data.append("user", inputs.user);
+    
     axios
-      .post(baseURL, inputs)
+      .post(baseURL, data, { "Content-Type": "multipart/form-data" })
       .then((response) => {
         setPost(response.data);
         console.log(response)
       });
     handleClose();
   }
+
+  const handleFileChange = (event) => {
+  
+    const name = event.target.name;
+    if (event.target.files) {
+      setInputs(values => ({ ...values, [name]: event.target.files[0] }));
+    }
+  };
 
   const handleInputChange = (event) => {
     const name = event.target.name;
@@ -128,7 +144,7 @@ export default function CustomizedDialogs() {
             type="file"
             name="image"
             id="image"
-            onChange={ handleInputChange }
+            onChange={ handleFileChange }
           />
         </DialogContent>
         <DialogActions>
