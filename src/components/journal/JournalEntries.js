@@ -13,7 +13,7 @@ export const JournalEntries = ({ entries }) => {
     const loadEntriesData = async() => {
         return await axios.get('http://localhost:3000/journal/entries')
             .then(function (res) {
-            // handle success
+            console.log(res.data)
             setEntryData(res.data);
             
         })

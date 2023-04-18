@@ -13,7 +13,7 @@ export const JournalEntry = ({ value }) => {
                 className="journal__entry-picture"
                 style={{
                     backgroundSize: 'cover',
-                    backgroundImage: 'url(https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg)'
+                    backgroundImage: `url(http://localhost:3000/journal/entriesImageFile/${ value.image })`
                 }}
             ></div>
 
