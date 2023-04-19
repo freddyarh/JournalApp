@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 import { types } from "../types/types";
-import { firebase, googleAuthProvider } from '../firebase/firebase-config';
+import { firebase, googleAuthProvider, facebookAuthProvider } from '../firebase/firebase-config';
 import { uiStartLoading, uiFinishLoading  } from "../actions/ui";
 
 
@@ -39,6 +39,19 @@ export const startGoogleLogin = () => {
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({user}) => {
                 dispatch(login(user.uid, user.displayName));
+            })
+    }
+}
+
+export const startFacebookLogin = () => {
+    return (dispatch) => {
+        firebase.auth().signInWithPopup( facebookAuthProvider )
+            .then( ({user}) => {
+                dispatch(login(user.uid, user.displayName));
+            })
+            .catch(err => {
+                console.log(err)
+                Swal.fire('Error', err.message, 'error');
             })
     }
 }

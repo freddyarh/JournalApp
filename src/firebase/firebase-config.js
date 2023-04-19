@@ -16,9 +16,11 @@ import 'firebase/auth';
 
  const db = firebase.firestore();
  const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+ const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
  
  export {
      db,
      googleAuthProvider,
+     facebookAuthProvider,
      firebase
  }

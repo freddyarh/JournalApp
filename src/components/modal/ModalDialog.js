@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import PropTypes from 'prop-types';
 import axios from "axios";
+import Swal from 'sweetalert2';
 import moment from 'moment';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -51,7 +52,7 @@ BootstrapDialogTitle.propTypes = {
 
 const baseURL = "http://localhost:3000/journal/entries";
 
-export default function CustomizedDialogs() {
+export default function CustomizedDialogs({ loadDataEntries }) {
   const [open, setOpen] = useState(false);
   const [post, setPost] = useState(null);
   
@@ -75,7 +76,13 @@ export default function CustomizedDialogs() {
       .post(baseURL, data, { "Content-Type": "multipart/form-data" })
       .then((response) => {
         setPost(response.data);
-        console.log(response)
+        Swal.fire(
+          'Success!',
+          response.data.msj,
+          'success'
+        )
+        loadDataEntries();
+        setInputs({});
       });
     handleClose();
   }

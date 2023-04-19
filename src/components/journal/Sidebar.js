@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { JournalEntries } from './JournalEntries'
 import { startLogout } from '../../actions/auth';
@@ -8,11 +8,17 @@ import CustomizedDialogs from '../modal/ModalDialog';
 
 export const Sidebar = () => {
 
+    const [getData, setGetData] = useState(false);
+
     const dispatch = useDispatch();
     const userName = useSelector( state => state.auth.name);
 
     const handleLogOut = () => {
         dispatch( startLogout() );
+    }
+
+    const loadDataEntries = () => {
+        setGetData(prev => !prev);
     }
 
     const handleNewEntry = async() => {
@@ -50,9 +56,9 @@ export const Sidebar = () => {
                         </p>
                 </div> */}
                 <div className="journal__new-entry">
-                    <CustomizedDialogs />
+                    <CustomizedDialogs loadDataEntries={ loadDataEntries }/>
                 </div>
-                <JournalEntries />
+                <JournalEntries getData={ getData } />
             </aside>
         </div>
     )
