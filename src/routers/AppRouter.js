@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { firebase } from '../firebase/firebase-config'
 import { useDispatch } from "react-redux";
+import CircularProgress from '@mui/material/CircularProgress';
 import {
     BrowserRouter as Router,
     Switch
@@ -38,7 +39,9 @@ export const AppRouter = () => {
 
     if( checking ) {
         return (
-            <h1>Wait...</h1>
+            // <h1>Wait...</h1>
+            <CircularProgress color="secondary" />
+            
         )
     }
     return (

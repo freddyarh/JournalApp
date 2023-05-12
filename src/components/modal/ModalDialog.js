@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import PropTypes from 'prop-types';
 import axios from "axios";
 import Swal from 'sweetalert2';
-import moment from 'moment';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 
@@ -55,6 +56,7 @@ const baseURL = "http://localhost:3000/journal/entries";
 export default function CustomizedDialogs({ loadDataEntries }) {
   const [open, setOpen] = useState(false);
   const [post, setPost] = useState(null);
+  const [value, setValue] = React.useState(2);
   
   const [inputs, setInputs] = useState({
     title: "",
@@ -144,6 +146,17 @@ export default function CustomizedDialogs({ loadDataEntries }) {
             rows={4}
             placeholder="Add some text"
             onChange={ handleInputChange }
+          />
+        </DialogContent>
+        <DialogContent>
+          <Typography component="legend">Did you enjoy?</Typography>
+          <Rating
+            name="simple-controlled"
+            value={value}
+            precision={0.5}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
           />
         </DialogContent>
         <DialogContent dividers>
