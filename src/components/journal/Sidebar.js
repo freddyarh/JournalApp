@@ -24,7 +24,6 @@ export const Sidebar = () => {
     const handleNewEntry = async() => {
         
         const text = await EntryModal();
-        console.log(text?.value)
         if(text.value !== undefined){
             const newEntry = {
               id: new Date().getTime(),
@@ -49,12 +48,6 @@ export const Sidebar = () => {
                         Logout
                     </button>
                 </div>
-                {/* <div className="journal__new-entry" onClick={ handleNewEntry }>
-                    <i className="far fa-calendar-plus fa-5x"></i>
-                        <p className="mt-1">
-                            New entry
-                        </p>
-                </div> */}
                 <div className="journal__new-entry">
                     <CustomizedDialogs loadDataEntries={ loadDataEntries }/>
                 </div>
