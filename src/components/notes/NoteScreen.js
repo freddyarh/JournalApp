@@ -29,9 +29,10 @@ export const NoteScreen = () => {
             <NotesAppBar />
             <div className="notes__body-content">
                 <div className="notes__graphic">
-                <input 
+                    <h2>Some awesome title </h2>
+                    <input 
                         type="text"
-                        placeholder="Some awesome title"
+                        placeholder="Title"
                         className="notes__title-input"
                     />
 
@@ -51,11 +52,7 @@ export const NoteScreen = () => {
                 </div>
                 <div className="notes__content">
 
-                    <input 
-                        type="text"
-                        placeholder="Monthly Graphic"
-                        className="notes__title-input"
-                    />
+                    <h2>Monthly Graphic</h2>
 
                     <div className="notes__image">
                         <img 
