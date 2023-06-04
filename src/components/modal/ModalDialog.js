@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
 import PropTypes from 'prop-types';
-import axios from "axios";
-import Swal from 'sweetalert2';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
@@ -13,6 +10,7 @@ import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
+import { useModalEntry } from '../../hooks/useModalEntry';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -51,65 +49,18 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-const baseURL = "http://localhost:3000/journal/entries";
-
 export default function CustomizedDialogs({ loadDataEntries }) {
-  const [open, setOpen] = useState(false);
-  const [post, setPost] = useState(null);
-  const [value, setValue] = React.useState(2);
-  
-  const [inputs, setInputs] = useState({
-    title: "",
-    description: "",
-    date: new Date(),
-    image: {},
-    user: useSelector( state => state.auth.uid)
-  });
-  
-  const handleSaveEntries = () => {
-    const data = new FormData();
-    data.append("title", inputs.title);
-    data.append("description", inputs.description);
-    data.append("date", inputs.date);
-    data.append("image", inputs.image);
-    data.append("user", inputs.user);
-    
-    axios
-      .post(baseURL, data, { "Content-Type": "multipart/form-data" })
-      .then((response) => {
-        setPost(response.data);
-        Swal.fire(
-          'Success!',
-          response.data.msj,
-          'success'
-        )
-        loadDataEntries();
-        setInputs({});
-      });
-    handleClose();
-  }
 
-  const handleFileChange = (event) => {
-  
-    const name = event.target.name;
-    if (event.target.files) {
-      setInputs(values => ({ ...values, [name]: event.target.files[0] }));
-    }
-  };
-
-  const handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-
-    setInputs(values => ({ ...values, [name]: value }));
-  }
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const {
+    open,
+    value,
+    setValue,
+    handleSaveEntries,
+    handleFileChange ,
+    handleInputChange,
+    handleClickOpen,
+    handleClose
+  } = useModalEntry(loadDataEntries);
 
   return (
     <div>
