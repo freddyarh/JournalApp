@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { NotesAppBar } from './NotesAppBar';
 
 export const NoteScreen = () => {
+    useEffect(() => {
+      console.log('hi')
+    }, [])
+    
     const data = [
         {
           name: 'Month A',
