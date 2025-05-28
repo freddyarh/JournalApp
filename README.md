@@ -7,8 +7,7 @@
     It's a website that allows people to take notes about their journal 
     <br/>
     <br />
-    <br />
-    <a href="https://freddyarh.github.io">About Me</a>
+    <a href="https://www.fredyaristizabal.com">About Me</a>
   </p>
 </p>
 
@@ -64,11 +63,6 @@
     </li>
   </ol>
 </details>
-
-# About the project
-
-[![Site preview](/public/social-image.png)](https://hashirshoaeb.github.io/home)
-
 
 ## Technology stack 🛠️
 
