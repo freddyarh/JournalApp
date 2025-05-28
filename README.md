@@ -6,8 +6,6 @@
   <p align="center">
     It's a website that allows people to take notes about their journal 
     <br/>
-    <strong>Site URL / Demo » </strong> 
-    <a href="https://freddyarh.github.io">hashirshoaeb.github.io/home</a>
     <br />
     <br />
     <a href="https://freddyarh.github.io">About Me</a>
