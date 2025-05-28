@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <h1 align="center">Journal App ✨</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    It's a website that allows people to take notes about their journal 
+    <br/>
+    <strong>Site URL / Demo » </strong> 
+    <a href="https://freddyarh.github.io">hashirshoaeb.github.io/home</a>
+    <br />
+    <br />
+    <a href="https://freddyarh.github.io">About Me</a>
+  </p>
+</p>
 
-## Available Scripts
+![GitHub contributors](https://img.shields.io/github/contributors/hashirshoaeb/home?color=ffcc66&style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/hashirshoaeb/home?color=ffcc66&style=for-the-badge)
+[![GitHub forks](https://img.shields.io/github/forks/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/star_book/network)
+[![GitHub issues](https://img.shields.io/github/issues/hashirshoaeb/home?color=ffcc66&style=for-the-badge)](https://github.com/hashirshoaeb/star_book/issues)
+[![GitHub license](https://img.shields.io/github/license/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/home/blob/master/LICENSE)
+[![Twitter Follow](https://img.shields.io/twitter/follow/hashirshoaeb?color=ffcc66&logo=twitter&logoColor=ffffff&style=for-the-badge)](https://twitter.com/hashirshoaeb)
+[![Node Version](https://img.shields.io/static/v1?label=Node&message=^22.12.0&color=026e00&style=for-the-badge)](https://nodejs.org)
+[![npm Version](https://img.shields.io/static/v1?label=npm&message=^10.9.0&color=cb0000&style=for-the-badge)](https://nodejs.org)
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About the project</a>
+      <ul>
+        <li>
+          <a href="#technology-stack-">Technology Stack 🛠️</a>
+        </li>
+        <li>
+          <a href="#structure-">Structure ⚓</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting started 💗</a>
+      <ul>
+        <li>
+          <a href="#prerequisites-">Prerequisites 🍪</a>
+        </li>
+        <li>
+          <a href="#setup-and-deployment-">Setup And Deployment 🔧</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#support-my-work">Support my work</a>
+    </li>
+    <li>
+      <a href="#showcase-">Showcase 🚀</a>
+    </li>
+    <li>
+      <a href="#versão-em-português-brazil">Versão em Português :brazil:</a>
+    </li>
+    <li>
+      <a href="#notice">Notice</a>
+    </li>
+    <li>
+      <a href="#stargazers-over-time">Stargazers over time</a>
+    </li>
+  </ol>
+</details>
 
-### `npm start`
+# About the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Site preview](/public/social-image.png)](https://hashirshoaeb.github.io/home)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Technology stack 🛠️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dependencies defined in package.json:
 
-### `npm run build`
+[Reactjs](https://reactjs.org/)
+| [Bootstrap](https://getbootstrap.com/)
+| [Typist](https://github.com/jstejada/react-typist)
+| [GitHub API](https://developer.github.com/v3/repos/)
+| [Instagram API](https://www.instagram.com/developer/embedding/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Structure ⚓
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Navigation bar (optional)
+- Body
+  - Name | Profession
+  - Contact / Find me / LinkedIn / GitHub / Instagram / Email / Hackerrank
+  - Resume | About me
+- About Me
+  - Display picture (optional)
+  - About myself, my Interests, Goals and Hobbies
+  - Things I'm good at (Skills)
+- Recent Projects (using GitHub API) (optional)
+- Skills (optional)
+  - Technical Skills
+  - Soft Skills
+- Footer
+  - Footer Note (optional)
+  - Copyrights - open source
+  - Acknowledgements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Getting started 💗
 
-### `npm run eject`
+## Prerequisites 🍪
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed on your PC. You should also own a GitHub account.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup And Deployment 🔧
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. To Get Started, Fork this repository to your GitHub account:
+2. Clone the forked repo from your account using:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+     git clone https://github.com/<your-username>/home.git
+   ```
 
-## Learn More
+3. Open in editor and edit [src/editable-stuff/config.js](./src/editable-stuff/config.js) file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Add your resume as <resume.pdf> in place of [src/editable-stuff/resume.pdf](./src/editable-stuff/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Edit [title](./public/index.html#L34) and meta [description](./public/index.html#L13) in [public/index.html](./public/index.html).
+6. Change URL in [package.json](./package.json) file:
 
-### Code Splitting
+   ```json
+    "homepage": "https://<your-username>.github.io/home"
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Or for deployment at custom domain, refer [create-react-app.dev](https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson)
 
-### Analyzing the Bundle Size
+7. After editing run the following bash commands:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   npm install
+   npm start
+   ```
 
-### Making a Progressive Web App
+8. To deploy website, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+    npm run build
+    npm run deploy
+   ```
 
-### Advanced Configuration
+   Or for deployment at \<username>.github.io, refer [READMEdocs/custom-deployment.md](./READMEdocs/custom-deployment.md) and [pages.js](./pages.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+9. Congrats your site is up and running. To see it live, visit:
 
-### Deployment
+   ```https
+     https://<your-username>.github.io/home
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+10. To change the thumbnail image:
 
-### `npm run build` fails to minify
+    - Navigate to the "public" folder.  
+    - There you will see "social-image.png".  
+    - Delete it.   
+    - Take a screenshot of your version and rename it "social-image.png" and place it there.  
+    
+   Next time if you make changes, repeat from step 8.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Facing issues? Feel free to contact at freddyarh13@gmail.com.
